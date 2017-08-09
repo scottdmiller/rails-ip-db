@@ -1,0 +1,16 @@
+image: "ruby:2.4"
+
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
+  - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+
+rails:
+  script:
+  - rails db:migrate
+  - rails db:seed
+  - rails test
+
