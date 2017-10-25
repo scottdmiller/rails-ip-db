@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024173736) do
+ActiveRecord::Schema.define(version: 20171025012724) do
+
+  create_table "ipdatabase", force: :cascade do |t|
+    t.text "server_name"
+    t.text "url"
+    t.text "ip_address"
+    t.text "tag"
+    t.integer "rID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"

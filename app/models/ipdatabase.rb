@@ -1,0 +1,2 @@
+class Ipdatabase < ApplicationRecord
+end
