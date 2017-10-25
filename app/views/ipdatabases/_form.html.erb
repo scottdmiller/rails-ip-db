@@ -1,0 +1,26 @@
+<%= form_with(model: ip_address, local: true) do |form| %>
+
+<div class="field">
+  <%= form.label :IP %>
+  <%= form.text_field :ip_address, server_name: :tag%>
+</div>
+
+<div class="field">
+  <%= form.label :server_name %>
+  <%= form.text_field :ip_address, server_name: :tag%>
+</div>
+
+<div class="field">
+  <%= form.label :url %>
+  <%= form.text_field :ip_address, server_name: :tag%>
+</div>
+
+<div class="field">
+  <%= form.label :tag %>
+  <%= form.text_field :ip_address, server_name: :tag%>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
