@@ -1,10 +1,9 @@
 class IpdatabasesController < ApplicationController
-  before_action only: [:show, :edit, :update, :destroy]
+  before_action :set_ip, only: [:show, :edit, :update, :destroy]
 
   def index
     @ip_address = Ipdatabases.all
   end
-
 
   # GET /users/1
   # GET /users/1.json
@@ -23,11 +22,11 @@ class IpdatabasesController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @ip = ip_address.new(user_params)
+    @ip = ip_address.new(ip_params)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to @ip, notice: 'User was successfully created.' }
+      if @ip.save
+        format.html { redirect_to @ip, notice: 'IP was successfully created.' }
         format.json { render :show, status: :created, location: @ip }
       else
         format.html { render :new }
@@ -41,7 +40,7 @@ class IpdatabasesController < ApplicationController
   def update
     respond_to do |format|
       if @ip.update(ip_params)
-        format.html { redirect_to @ip, notice: 'User was successfully updated.' }
+        format.html { redirect_to @ip, notice: 'IP was successfully updated.' }
         format.json { render :show, status: :ok, location: @ip }
       else
         format.html { render :edit }
@@ -55,19 +54,19 @@ class IpdatabasesController < ApplicationController
   def destroy
     @ip.destroy
     respond_to do |format|
-      format.html { redirect_to ipdatabases_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to ipdatabases_url, notice: 'IP was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @ip = ip_address.find(params[:id])
+    def set_ip
+      @ip = Ipdatabases.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ip_params
-      params.require(:ip).permit(:server_name)
+      params.require(:ip)
     end
 end
