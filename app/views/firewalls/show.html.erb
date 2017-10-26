@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @firewall.source %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @firewall.port %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @firewall.destination %>
+</p>
+
+<%= link_to 'Edit', edit_firewall_path(@firewall) %> |
+<%= link_to 'Back', firewalls_path %>

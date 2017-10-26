@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :firewalls
   #get 'ipdatabases/index'
   resources :ipdatabases
   resources :microposts

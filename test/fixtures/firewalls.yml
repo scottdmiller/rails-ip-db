@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source: MyText
+  port: 1
+  destination: MyText
+
+two:
+  source: MyText
+  port: 1
+  destination: MyText
