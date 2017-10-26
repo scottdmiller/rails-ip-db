@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025012724) do
+ActiveRecord::Schema.define(version: 20171026165628) do
 
-  create_table "ipdatabase", force: :cascade do |t|
+  create_table "firewalls", force: :cascade do |t|
+    t.text "source"
+    t.integer "port"
+    t.text "destination"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ipdatabases", force: :cascade do |t|
     t.text "server_name"
     t.text "url"
     t.text "ip_address"
