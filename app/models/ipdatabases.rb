@@ -1,2 +1,2 @@
-class Ipdatabase < ApplicationRecord
+class Ipdatabases < ApplicationRecord
 end
