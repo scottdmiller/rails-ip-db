@@ -10,6 +10,7 @@ class IpdatabasesController < ApplicationController
   def show
   end
 
+  
   # GET /users/new
   def new
     @ip = ip_address.new
