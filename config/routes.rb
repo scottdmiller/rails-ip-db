@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :firewalls
-#  get 'firewall/index'
+  # get 'firewall/index'
   resources :firewall
   resources :ipdatabases
   resources :microposts
